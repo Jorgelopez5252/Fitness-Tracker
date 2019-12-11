@@ -1,0 +1,1 @@
+// Model folder with a model for your workout. You can use the mongoose schema as an example. Your exercises are going to be in an array
