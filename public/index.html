@@ -42,28 +42,39 @@
       </div>
 <!-- end of generated workouts -->
 <br>
-<div class="input-group">
-        <input id="workout" type="text" class="form-control" aria-label="Text input with dropdown button">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type</button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Cardio</a>
-            <a class="dropdown-item" href="#">Aerobic</a>
-            <a class="dropdown-item" href="#">Fat-Burner</a>
-            
-          </div>
-        </div>
+<form>
 
-    </div>
+  <div class="form-group">
+    <label for="exercise-type">Type</label>
+    <select class="form-control" id="exercise-type">
+      <option disabled selected>Select Exercise Type</option>
+      <option>Cardio</option>
+      <option>Fat Burner</option>
+      <option>Aerobic</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exercise-name">Name</label>
+  <input type="text" name="exercise-name" id="exercise-name" placeholder="running" >
+  </div>
+  <div class="form-group">
+    <label for="duration">Duration (in min)</label>
+  <input type="number" name="duration" id="duration" placeholder="10" >
+  </div>
+  <div>
+    <button id="submit">
+      Submit
+    </button>
+  </div>
+
+</form>
+
     <br>
-    <input class="btn btn-primary" type="submit" value="Submit">
+   
 
     <!-- Scripts -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"

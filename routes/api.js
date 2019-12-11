@@ -1,4 +1,32 @@
-// API routes file, need 2 routes. 1  post route for adding a workout and and 1 get route for retrieving all of the work outs
+const router = require("express").Router();
+const Exercise = require("../models/workout");
+
+router.post("/api/workout", (req, res) => {
+    const newExercise = req.body;
+    console.log(newExercise);
+
+    Exercise.create(newExercise)
+ 
+    .then(dbExercise => {
+      res.json(dbExercise);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+
+})
 
 
-// Stu-populate activity 15 and the model as well since it’s going to be used to make our workout model and the exercise portion will over take the notes.js In the mentioned activity above
+router.get("/all", (req, res) => {
+    Exercise.find()
+    .then(dbExercises => {
+        res.json(dbExercises);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  
+  });
+
+
+module.exports = router;

@@ -5,18 +5,17 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const workoutsdb = new Schema({
-    exercise:{
-        type:String,
-        trim:true,
-        required: "Workout is required"
-    },
 
-    exerciseCreated: {
-        type:Date,
-        default: Date.now
-    }
+    date: {
+        type: Date,
+        default: Date.now()
+    },
+    type: String,
+    name: String,
+    duration: Number
+
 });
 
-const Exercise= mongoose.model("exercise", workoutsdb);
+const Exercise= mongoose.model("Exercise", workoutsdb);
 
 module.exports = Exercise;

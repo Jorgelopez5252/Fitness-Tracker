@@ -1,13 +1,46 @@
-// Js file in your public folder for front end javascript - easiest to use jquery has an on-click function that pulls values off of your form on submit, builds an object with your values, does an AJAX call POST route to back end. Look at the cat activity js file in public folder as an example
-
-const workouts = []
 
 
 $(document).ready(function(){
-    $("input.btn").click(function() {
-        const workoutInput = document.getElementById(workout);
-        console.log("I have been Clicked" + workoutInput);
-    });
-    
-});
+    $("#submit").click(function() {
+        event.preventDefault();
 
+        const workoutInput = {
+            type:  $("#exercise-type").val().trim(),
+            name: $("#exercise-name").val().trim(),
+            duration: parseInt( $("#duration").val().trim())
+        }
+
+
+        console.log(workoutInput);
+
+        $.ajax("/api/workout", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            data: JSON.stringify(workoutInput)
+        }).then(function () {
+            console.log("new workout added");
+        });
+    });
+
+function getExercise () {
+//ajax call with a get route//
+
+$.ajax("/all", {
+    method: "GET",
+}).then(function (result) {
+console.log(result);
+//get values off of result and append to table 
+
+
+
+
+
+
+});
+    
+    
+};
+
+getExercise();
+
+});
