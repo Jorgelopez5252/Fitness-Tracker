@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/Jorgelopez5252/Fitness-Tracker/issues"
   },
-  "homepage": "https://github.com/Jorgelopez5252/Fitness-Tracker#readme"
+  "homepage": "https://github.com/Jorgelopez5252/Fitness-Tracker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.8.0",
+    "morgan": "^1.9.1"
+  }
 }
